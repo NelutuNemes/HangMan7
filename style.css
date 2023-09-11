@@ -1,20 +1,44 @@
 :root {
     --main-background-color: #ffffff;
-    --second-background-color: linear-gradient(to bottom, #ffffff, pink);
-    --third-background-color: blue;
+
 
 }
+
+.gradient-background {
+    background: linear-gradient(to bottom, #f5f3f3, rgb(251, 167, 181));
+}
+
+.gradient-background2 {
+    background: linear-gradient(to bottom, #f5f3f3, blue);
+}
+
+.gradient-background3 {
+    background: linear-gradient(to bottom, #f5f3f3, rgb(59, 247, 59));
+}
+
+
+
 
 
 #body {
     /* background-color: dimgray; */
-    background-image: url(resources/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg);
-    color: white;
+    /* background-image: url(resources/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg); */
+    background-color: var(--main-background-color);
+    color: rgb(129, 129, 129);
+    /* font-family: cursive; */
+    /* font-weight: 900; */
+}
+
+#footer-text {
+    color: rgb(129, 129, 129);
+    font-family: cursive;
+    font-weight: 600;
+
 }
 
 #navbar {
     width: 100%;
-    margin-top: 0.2vh;
+    margin-top: 0.2vw;
     border-radius: 10px 10px 0 0;
 
 }
@@ -49,17 +73,22 @@ header {
     text-align: center;
 }
 
+main {
+    margin-top: 8vw;
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--main-background-color);
+    background-color: #ffffff;
     color: rgb(129, 129, 129);
+    box-shadow: 0px 2px 4px rgba(11, 11, 11, 0.935);
     padding: 10px;
     margin: auto;
-    margin-top: 1vh;
+    margin-top: 0.1vw;
     max-width: 80vw;
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px;
     /* margin-top: 3vh; */
 }
 
@@ -68,10 +97,11 @@ header {
     max-width: 80vw;
     height: 7vw;
     max-height: 7vw;
-
-    border-radius: 10px 10px 0 0;
+    border-radius: 10px;
     /* background-color: #74c377; */
-    background-color: var(--main-background-color);
+    background-color: #ffffff;
+    box-shadow: 0px 2px 4px rgba(11, 11, 11, 0.935);
+
 
 
 }
@@ -99,6 +129,7 @@ header {
     box-shadow: 0px 2px 4px rgba(11, 11, 11, 0.935);
     border: 1px solid white;
     margin-left: 5%;
+    font-size: 2vw;
 
 }
 
@@ -139,7 +170,7 @@ header {
 }
 
 #progress {
-    background-color: var(--main-background-color);
+    background-color: #ffffff;
 }
 
 #progress-bar {
@@ -165,11 +196,12 @@ header {
 .keyboard-container {
     display: flex;
     justify-content: center;
-    width: 60%;
+    width: 60vw;
+    min-width: 60vw;
 }
 
 #first-section {
-    background-color: white;
+    background-color: #ffffff;
     box-shadow: 0px 2px 4px rgba(11, 11, 11, 0.935);
     width: fit-content;
     padding: 4px;
@@ -178,8 +210,8 @@ header {
     border-radius: 5px;
     /* border: 1px solid lightgray; */
     min-width: 20vw;
-    min-height: 8vw;
-    max-height: 8vw;
+    min-height: 9vw;
+    /* max-height: 8vw; */
     text-align: center;
 }
 
@@ -212,7 +244,7 @@ header {
 
 
 #first-section span {
-    font-size: 30px;
+    font-size: 5vw;
     font-weight: bolder;
     color: white;
 }
@@ -232,7 +264,9 @@ header {
     height: auto;
     /* border: 1px solid black; */
     padding: 10px;
-    background-color: rgb(239, 238, 238);
+    /* background-color: #ffffff; */
+    background-color: var(--main-background-color);
+
     border-radius: 40px;
     box-shadow: 0px 2px 4px rgba(11, 11, 11, 0.935);
 
@@ -263,7 +297,7 @@ header {
     /* Lățimea fiecărui element span */
     height: auto;
     /* Înălțimea fiecărui element span */
-    border: 1px solid lightgray;
+    border: 1px solid rgb(129, 129, 129);
     /* Adăugare bordură pentru a separa literele */
     cursor: pointer;
 }
@@ -331,7 +365,9 @@ canvas {
     justify-content: center;
     width: 50%;
     position: relative;
-    font-size: 12px;
+    /* font-size: 12px; */
+    font-size: 2.1vw;
+
 }
 
 #wrong-message {
@@ -370,19 +406,21 @@ canvas {
     flex-direction: row;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
 
 
 }
 
 #difficulty-form {
     width: 100%;
+    height: 5vw;
     max-height: 5vw;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     margin: auto;
-    font-size: 10px;
-    background-color: var(--main-background-color);
+    font-size: 1vw;
+    background-color: #ffffff;
     /* border: 1px solid black; */
     box-shadow: 0px 2px 4px rgba(11, 11, 11, 0.935);
     /* padding: 4px; */
@@ -390,31 +428,24 @@ canvas {
     align-items: center;
 }
 
-#submit-button {
-    /* width: 20%; */
-    font-size: 70%;
-    border-radius: 10px;
-    margin: 4px;
-    background-color: white;
-    border: 1px solid black;
-}
+
 
 #difficulty-level {
     /* margin-bottom: 1vw; */
     text-align: center;
     color: black;
-    font-size: 10px;
-    padding: 4px;
+    font-size: 1vw;
+    /* padding: 4px; */
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     height: 6vw;
     max-height: 6vw;
-    width: 37.5%;
-    background-color: var(--main-background-color);
+    width: 34vw;
+    background-color: #ffffff;
     /* background-color: rgb(58, 153, 184); */
 
 
@@ -430,8 +461,8 @@ canvas {
     flex-direction: row;
     justify-content: space-evenly;
     margin: auto;
-    font-size: 10px;
-    background-color: var(--main-background-color);
+    font-size: 1vw;
+    background-color: #ffffff;
     /* border: 1px solid black; */
     box-shadow: 0px 2px 4px rgba(11, 11, 11, 0.935);
     /* padding: 4px; */
@@ -439,31 +470,23 @@ canvas {
     align-items: center;
 }
 
-#submit-button {
-    /* width: 20%; */
-    font-size: 70%;
-    border-radius: 10px;
-    margin: 4px;
-    background-color: white;
-    border: 1px solid black;
-}
 
 #color-scheme {
     /* margin-bottom: 1vw; */
     text-align: center;
     color: black;
-    font-size: 10px;
-    padding: 4px;
+    font-size: 1vw;
+    /* padding: 4px; */
     /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 6vw;
     max-height: 6vw;
-    width: 37.5%;
-    background-color: var(--main-background-color);
+    width: 34vw;
+    background-color: #ffffff;
     /* background-color: rgb(58, 153, 184); */
 
 
@@ -475,21 +498,22 @@ canvas {
 #round-results {
     /* margin-top: 0.5vh; */
     text-align: center;
-    background-color: var(--main-background-color);
+    background-color: #ffffff;
     color: black;
-    font-size: 12px;
+    font-size: 1.1vw;
     padding: 4px;
     margin-left: 5px;
     margin-right: 5px;
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
-    border: 1px solid black;
+    box-shadow: 0px 2px 4px rgba(11, 11, 11, 0.935);
+
+    /* border: 1px solid black; */
     border-radius: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    height: 6vw;
-    max-height: 6vw;
-    width: 25%;
+    height: 5vw;
+    max-height: 5vw;
+    width: 20vw;
     /* background-color: yellowgreen; */
 
 }
@@ -500,16 +524,17 @@ canvas {
 #theme-label {
     color: black;
     display: flex;
-    flex-direction: column;
-    font-size: 8px;
+    flex-direction: row;
+    font-size: 1vw;
     align-items: center;
     height: 3vw;
+    /* flex-wrap: wrap; */
 
 }
 
 #difficulty-select {
     /* padding: 8px; */
-    font-size: 10px;
+    font-size: 1vw;
     display: flex;
     align-items: center;
     height: 3vw;
@@ -518,7 +543,34 @@ canvas {
 
 }
 
-#submit-button {
+#submit-button,
+#submit-button2 {
+    width: 8vw;
+    height: 3vw;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgb(129, 129, 129);
+    color: #fff;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vw;
+}
+
+#submit-button:hover,
+#submit-button2:hover {
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+}
+
+/* #submit-button2 {
     width: 8vw;
     height: 3vw;
     padding-left: 10px;
@@ -534,8 +586,20 @@ canvas {
     align-items: center;
 }
 
-#submit-button:hover {
+#submit-button2:hover {
     background-color: white;
     color: red;
     border: 1px solid red;
-}
+} */
+
+
+/* @media screen and (max-width: 530px) {
+    #wrong-message {
+        display: none;
+    }
+
+    #correct-message {
+        display: none;
+    }
+
+} */

@@ -234,7 +234,10 @@ function updateWinsOnPage() {
     generateKeyboard();
     resetHangman();
     initCanvas();
-    resetProgressBar();
+    setTimeout(function () {
+        resetProgressBar();
+    }, 2000);
+
     check_Letter_InWord
 
 
@@ -355,20 +358,18 @@ function updateProgressBar() {
     if (currentWrongChoices === maxWrongChoices) {
         progressBar.style.width = "0%";
         progressBar.style.backgroundColor = "white";
-        setTimeout(function () {
-            progressMessage1.textContent = "What lives, my friend?";
-        }, 1000); // Afișează primul mesaj după 1 secundă
+        progressMessage1.textContent = "What lives, my friend?";
 
         setTimeout(function () {
             progressMessage2.textContent = "I'm sorry, but you've just lost your life!";
-        }, 3000); // Afișează al doilea mesaj după 3 secunde
+        }, 1000); // Afișează al doilea mesaj după 3 secunde
         setTimeout(function () {
             progressMessage3.textContent = "I mean, you're dead!";
-        }, 6000); // Afișează al treilea mesaj după 6 secunde
+        }, 2000); // Afișează al treilea mesaj după 6 secunde
         // Șterge ultimul mesaj după 4 secunde
         setTimeout(function () {
             progressMessage3.textContent = "";
-        }, 10000);
+        }, 3000);
     }
 }
 
@@ -547,37 +548,108 @@ function drawNextHangmanPart() {
 // drawNextHangmanPart();
 // drawNextHangmanPart();
 
+// const themeSelect = document.getElementById("theme-select");
+// const submitButton2 = document.getElementById("submit-button2");
+// // const mainContainer = document.getElementById("main-container"); // Adăugați o referință la elementul cu id-ul "main-container"
+// const body_theme = document.getElementById("body"); // Adăugați o referință la elementul cu id-ul "main-container"
+// const keyboard_theme = document.getElementById("keyboard"); // Adăugați o referință la elementul cu id-ul "main-container"
+
+// submitButton2.addEventListener("click", (event) => {
+//     event.preventDefault();
+
+//     const selectedTheme = themeSelect.value;
+
+//     switch (selectedTheme) {
+//         case "Clean-white":
+//             document.documentElement.style.setProperty("--main-background-color", "#ffffff");
+//             break;
+//         case "Barbie-Pink":
+//             document.documentElement.style.setProperty("--main-background-color", "ffffff");
+//             break;
+//         case "Blue-blade":
+//             document.documentElement.style.setProperty("--main-background-color", "ffffff");
+//             break;
+//         case "Green-beetle":
+//             document.documentElement.style.setProperty("--main-background-color", "ffffff");
+//             break;
+
+//         default:
+//             // Dacă nu se potrivește cu nicio temă cunoscută, nu face nimic.
+//             break;
+//     }
+
+//     // Adăugați sau eliminați clasa CSS în funcție de temă
+//     if (selectedTheme === "Barbie-Pink") {
+//         body_theme.classList.add("gradient-background"); // Adaug clasa cu gradient roz
+//         keyboard_theme.classList.add("gradient-background"); // Adaug clasa cu gradient roz
+
+
+//     } else if (selectedTheme === "Blue-blade") {
+//         body_theme.classList.add("gradient-background2"); // Adaug clasa cu gradient albastru
+//         keyboard_theme.classList.add("gradient-background2"); // Adaug clasa cu gradient albastru
+//     } else if (selectedTheme === "Green-beetle") {
+//         body_theme.classList.add("gradient-background3"); // Adaug clasa cu gradient verde
+//         keyboard_theme.classList.add("gradient-background3"); // Adaug clasa cu gradient verde
+
+//     } else {
+//         body_theme.classList.remove("gradient-background"); // Elimin clasa cu gradient roz
+//         keyboard_theme.classList.remove("gradient-background"); // Elimin clasa cu gradient roz
+//         body_theme.classList.remove("gradient-background2"); // Elimin clasa cu gradient albastru
+//         keyboard_theme.classList.remove("gradient-background2"); // Elimin clasa cu gradient albastru
+//         body_theme.classList.remove("gradient-background3"); // Elimin clasa cu gradient verde
+//         keyboard_theme.classList.remove("gradient-background3"); // Elimin clasa cu gradient verde
+
+
+
+//     }
+// });
+
 const themeSelect = document.getElementById("theme-select");
 const submitButton2 = document.getElementById("submit-button2");
-const body = document.body;
+const body_theme = document.getElementById("body");
+const keyboard_theme = document.getElementById("keyboard");
+
+let currentTheme = "Clean-white"; // Tema curentă implicită
 
 submitButton2.addEventListener("click", (event) => {
-    event.preventDefault(); // Opriți comportamentul implicit al butonului de submit pentru a preveni o reîncărcare a paginii.
+    event.preventDefault();
 
     const selectedTheme = themeSelect.value;
 
-    switch (selectedTheme) {
-        case "Clean-withe":
-            document.documentElement.style.setProperty("--main-background-color", "#ffffff");
-            document.documentElement.style.setProperty("--second-background-color", "pink");
-            document.documentElement.style.setProperty("--third-background-color", "blue");
-            break;
-        case "Barbie-Pink":
-            document.documentElement.style.setProperty("--main-background-color", "pink");
-            document.documentElement.style.setProperty("--second-background-color", "#ffffff");
-            document.documentElement.style.setProperty("--third-background-color", "blue");
-            break;
-        case "Blue-blade":
-            document.documentElement.style.setProperty("--main-background-color", "blue");
-            document.documentElement.style.setProperty("--second-background-color", "pink");
-            document.documentElement.style.setProperty("--third-background-color", "#ffffff");
-            break;
-        default:
-            // Dacă nu se potrivește cu nicio temă cunoscută, nu face nimic.
-            break;
+    // Schimb tema curentă doar dacă este diferită de tema selectată
+    if (selectedTheme !== currentTheme) {
+        // Elimin clasa CSS a temei anterioare (dacă există)
+        body_theme.classList.remove("gradient-background", "gradient-background2", "gradient-background3");
+        keyboard_theme.classList.remove("gradient-background", "gradient-background2", "gradient-background3");
+
+        // Actualizează tema curentă
+        currentTheme = selectedTheme;
+
+        // Actualizează culoarea de fundal a întregii pagini
+        switch (selectedTheme) {
+            case "Clean-white":
+                document.documentElement.style.removeProperty("--main-background-color");
+                body_theme.style.backgroundColor = "#ffffff";
+                break;
+            case "Barbie-Pink":
+                document.documentElement.style.setProperty("--main-background-color", "#fffff");
+                body_theme.classList.add("gradient-background");
+                keyboard_theme.classList.add("gradient-background");
+                break;
+            case "Blue-blade":
+                document.documentElement.style.setProperty("--main-background-color", "#fffff");
+                body_theme.classList.add("gradient-background2");
+                keyboard_theme.classList.add("gradient-background2");
+                break;
+            case "Green-beetle":
+                document.documentElement.style.setProperty("--main-background-color", "#ffffff");
+                body_theme.classList.add("gradient-background3");
+                keyboard_theme.classList.add("gradient-background3");
+                break;
+            default:
+                // Dacă nu se potrivește cu nicio temă cunoscută, nu face nimic.
+                break;
+        }
     }
 });
-
-
-
 
