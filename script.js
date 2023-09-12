@@ -397,7 +397,9 @@ navbar.addEventListener("mouseenter", function () {
 
 // Adaug un eveniment pentru detectarea mișcării mouse-ului în afara barei de navigare și liste de opțiuni
 navbar.addEventListener("mouseleave", function () {
-    navbar.style.display = "none"; // Ascunde bara de navigare
+    setTimeout(function () {
+        navbar.style.display = "none"; // Ascunde bara de navigare
+    }, 2000);
 });
 
 
