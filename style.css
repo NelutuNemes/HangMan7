@@ -7,17 +7,20 @@
 .gradient-background {
     background: linear-gradient(to bottom, #f5f3f3, rgb(251, 167, 181));
     background-repeat: no-repeat;
+    height: 100vh;
 }
 
 .gradient-background2 {
     background: linear-gradient(to bottom, #f5f3f3, blue);
     background-repeat: no-repeat;
+    height: 100vh;
 
 }
 
 .gradient-background3 {
     background: linear-gradient(to bottom, #f5f3f3, rgb(59, 247, 59));
     background-repeat: no-repeat;
+    height: 100vh;
 
 }
 
