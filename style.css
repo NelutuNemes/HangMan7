@@ -784,10 +784,10 @@ canvas {
 
     #submit-button,
     #submit-button2 {
-        width: 8vw;
+        width: 9vw;
         height: 3vw;
-        padding-left: 1px;
-        padding-right: 1px;
+        padding-left: 2px;
+        padding-right: 2px;
         margin-left: 1px;
         margin-right: 1px;
         background-color: rgb(129, 129, 129);
@@ -799,7 +799,7 @@ canvas {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 2vw;
+        font-size: 1.5vw;
     }
 
 }

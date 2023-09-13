@@ -198,6 +198,13 @@ function check_Letter_InWord(letter) {
         game_result.textContent = "Congratulations ! You are a winner ! The game is over !";
         player_wins++;
         updateWinsOnPage();
+        navbar.style.display = "block";
+        setTimeout(function () {
+            navbar.style.display = "none";
+
+        }, 3000);
+
+
 
     } else if (wrong_choice_counter === 6) {
         console.log("Ai pierdut! Jocul s-a încheiat.");
@@ -211,6 +218,12 @@ function check_Letter_InWord(letter) {
         setTimeout(function () {
             updateWinsOnPage();
         }, 2000);
+        navbar.style.display = "block";
+        setTimeout(function () {
+            navbar.style.display = "none";
+
+        }, 3000);
+
 
 
     }
