@@ -736,7 +736,7 @@ canvas {
         justify-content: space-around;
         height: 8vw;
         max-height: 8vw;
-        width: 24vw;
+        width: 28vw;
         /* background-color: yellowgreen; */
 
     }
@@ -775,7 +775,7 @@ canvas {
         align-items: center;
         height: 3vw;
         border-radius: 5px;
-        width: 20vw;
+        width: 17vw;
         border: 1px solid black;
 
 
@@ -799,7 +799,7 @@ canvas {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 1vw;
+        font-size: 2vw;
     }
 
 }
